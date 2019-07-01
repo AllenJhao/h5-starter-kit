@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": [
+          "last 2 versions",
+          "ie > 9"
+        ]
+      }
+    ],
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
