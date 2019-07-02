@@ -1,10 +1,9 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCssChunksWebpackPlugin = require('extract-css-chunks-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const config = require('./webpack.config');
-
+console.log(process.env.NODE_ENV)
 module.exports = Object.assign({}, config, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
@@ -16,12 +15,6 @@ module.exports = Object.assign({}, config, {
     hot: true,
     inline: true,
     historyApiFallback: true,
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'static/js/[name].js',
-    chunkFilename: 'static/js/[name].js',
   },
   plugins: [
     new HtmlWebpackPlugin({

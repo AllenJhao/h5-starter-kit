@@ -16,6 +16,12 @@ module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/index'),
   },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: process.env.NODE_ENV === 'development' ?  'static/js/[name].js' : 'static/js/[name].[contenthash:6].js',
+    chunkFilename: process.env.NODE_ENV === 'development' ?  'static/js/[name].js' : 'static/js/[name].[contenthash:6].js',
+  },
   module: {
     rules:[{
       test: /\.vue$/,

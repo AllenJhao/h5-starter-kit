@@ -8,12 +8,6 @@ const config = require('./webpack.config');
 
 module.exports = Object.assign({}, config, {
   mode: 'production',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'static/js/[name].[contenthash:6].js',
-    chunkFilename: 'static/js/[name].[contenthash:6].js',
-  },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     new webpack.NamedChunksPlugin(
